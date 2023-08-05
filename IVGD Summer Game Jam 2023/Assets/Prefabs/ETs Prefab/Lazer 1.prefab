@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 975901473}
   - component: {fileID: 8030026209386406311}
   m_Layer: 10
-  m_Name: Lazer 2
-  m_TagString: WeaponC
+  m_Name: Lazer 1
+  m_TagString: WeaponB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.67, y: 11.73, z: 5.77}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 340c4d4cb6ebf4d479d215520ed4c40e, type: 2}
+  - {fileID: 2100000, guid: 6d57f6db27c970243b06ae201d0b9f42, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
