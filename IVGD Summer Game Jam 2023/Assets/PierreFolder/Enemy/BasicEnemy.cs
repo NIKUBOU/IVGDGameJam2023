@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
-{
+{   
+ 
+    public enum EnemyType
+    {
+        TypeA,
+        TypeB,
+        TypeC,
+        Indestructible,
+    }
     
     [Header("MyEnemyType")]
-    [SerializeField] private bool TypeA; 
-    [SerializeField] private bool TypeB;
-    [SerializeField] private bool TypeC;
+    [SerializeField] private EnemyType enemyType;
 
     private string weaponA = "WeaponA"; //set the tag
     private string weaponB = "WeaponB"; // set the tag
@@ -69,19 +75,19 @@ public class BasicEnemy : MonoBehaviour
         {
             Debug.Log("I'm Hit");
 
-            if (other.gameObject.CompareTag(weaponA) && TypeA)
+            if (other.gameObject.CompareTag(weaponA) && enemyType == EnemyType.TypeA)
             {
                 Debug.Log("I should Die form A");
                 Destroy(gameObject);
             }
             
-            if (other.gameObject.CompareTag(weaponB) && TypeB)
+            if (other.gameObject.CompareTag(weaponB) && enemyType == EnemyType.TypeB)
             {
                 Debug.Log("I should Die form B");
                 Destroy(gameObject);
             }
             
-            if (other.gameObject.CompareTag(weaponC) && TypeC)
+            if (other.gameObject.CompareTag(weaponC) && enemyType == EnemyType.TypeC)
             {
                 Debug.Log("I should Die form C");
                 Destroy(gameObject);

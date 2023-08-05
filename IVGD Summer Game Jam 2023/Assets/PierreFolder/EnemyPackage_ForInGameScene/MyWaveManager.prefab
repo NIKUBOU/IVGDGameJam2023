@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8133487445124941713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5341959035342232187}
+  - component: {fileID: 2129738203809492147}
+  m_Layer: 0
+  m_Name: MyWaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5341959035342232187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133487445124941713}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129738203809492147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133487445124941713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f97b1a4becc2004dab5ba761f41e234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveConfigurations:
+  - delayBeforeWave: 1
+    enemySpawnData:
+    - enemyPrefab: {fileID: 8291124258550479934, guid: 946092a46fae10843aa8c004f04a0fc4, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 7
+    - enemyPrefab: {fileID: 131039986067123747, guid: f367dd079086f4f4c8dacae78c611cb9, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 7
+    - enemyPrefab: {fileID: 8291124258550479934, guid: 946092a46fae10843aa8c004f04a0fc4, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 0
+    - enemyPrefab: {fileID: 131039986067123747, guid: f367dd079086f4f4c8dacae78c611cb9, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 0
+  - delayBeforeWave: 7
+    enemySpawnData:
+    - enemyPrefab: {fileID: 55822615836907199, guid: 3bc2763432f93c14997f6e2f86a98457, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 7
+    - enemyPrefab: {fileID: 131039986067123747, guid: f367dd079086f4f4c8dacae78c611cb9, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 0
+  - delayBeforeWave: 7
+    enemySpawnData:
+    - enemyPrefab: {fileID: 1625208627873676977, guid: f49a055542f0afb4a9f985ba5a4cdcb1, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 3
+    - enemyPrefab: {fileID: 8291124258550479934, guid: 946092a46fae10843aa8c004f04a0fc4, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 0
+  - delayBeforeWave: 7
+    enemySpawnData:
+    - enemyPrefab: {fileID: 6174539416299840296, guid: b965027022d4f6445be34b4de25e24e8, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 5
+    - enemyPrefab: {fileID: 572353837944041252, guid: 4c6bf2e1787077b478fbe5e336e6deed, type: 3}
+      spawnPoint: {fileID: 0}
+      enemyCount: 1
+      delayBetweenSpawns: 0

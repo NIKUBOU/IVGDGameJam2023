@@ -435,9 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4590213d6d2a90d4b891751ff380db82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TypeA: 0
-  TypeB: 0
-  TypeC: 0
+  enemyType: 3
   doIShoot: 0
   doIDoubleShoot: 0
   fireRate: 1
