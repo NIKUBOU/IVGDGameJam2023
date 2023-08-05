@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 7219229317517700554}
   m_Layer: 0
   m_Name: BodyCollider
-  m_TagString: EnemyA
+  m_TagString: EnemyC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b376b01a97a81734c9c2eceb0d2adb31, type: 2}
+  - {fileID: 2100000, guid: 3fbf1bc2c05d4dd478b257e0d9c3a96e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -402,8 +402,8 @@ GameObject:
   - component: {fileID: 8877945537042710698}
   - component: {fileID: 1934029169578113414}
   m_Layer: 0
-  m_Name: MyEnemyA
-  m_TagString: EnemyA
+  m_Name: MyEnemyC
+  m_TagString: EnemyC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -437,10 +437,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4590213d6d2a90d4b891751ff380db82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TypeA: 1
+  TypeA: 0
   TypeB: 0
-  TypeC: 0
+  TypeC: 1
   doIShoot: 0
-  fireRate: 0
+  doIDoubleShoot: 1
+  fireRate: 1
+  fireDelay: 0.3
   bulletPrefab: {fileID: 8289727317611559522, guid: 70c954d794bca68479fb7c435c82dbdb, type: 3}
   firePoint: {fileID: 2870612488419674604}

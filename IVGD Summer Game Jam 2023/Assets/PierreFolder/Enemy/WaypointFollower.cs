@@ -5,11 +5,13 @@ using UnityEngine;
 public class WaypointFollower : MonoBehaviour
 {
     // store a reference to the waypoint system this object will use
+    [Header("Waypoint")]
     [SerializeField] private WaypointsManager waypoints;
-
     [SerializeField] private float moveSpeed = 5f;
-
     [SerializeField] private float distanceThreshold = 0.1f;
+
+    [Header("SelfDestruction")]
+    [SerializeField] private bool autoDestruction;
 
 
 
@@ -42,6 +44,10 @@ public class WaypointFollower : MonoBehaviour
                 currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
                 transform.rotation = currentWaypoint.rotation;
             }
+        }
+        else if (waypoints.stopTank == true && autoDestruction == true) // Self destruction on last waypoint hit
+        {
+            Destroy(transform.parent.gameObject);
         }
 
     }

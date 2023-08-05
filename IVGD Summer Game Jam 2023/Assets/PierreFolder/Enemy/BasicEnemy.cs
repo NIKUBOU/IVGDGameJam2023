@@ -17,7 +17,9 @@ public class BasicEnemy : MonoBehaviour
     //Combat
     [Header("Shooting")]
     [SerializeField] private bool doIShoot;
+    [SerializeField] private bool doIDoubleShoot;
     [SerializeField] private float fireRate;
+    [SerializeField] private float fireDelay;
     private float nextShoot;
     public GameObject bulletPrefab; // prefab of the bullet
     public Transform firePoint; // shooting location
@@ -32,23 +34,32 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (doIShoot)
+        if (doIShoot || doIDoubleShoot)
         {
-            Shoot();
-            Debug.Log("Ishouldshoot");
+            Shoot();            
         }
         
     }
 
     void Shoot()
-    {
-        Debug.Log("panpan");
-        if (Time.time >= nextShoot)
+    {        
+        if (Time.time >= nextShoot && !doIDoubleShoot)
         {            
             Instantiate(bulletPrefab, firePoint.position, Quaternion.identity); // Create a bullet
-
             nextShoot = Time.time + fireRate; // Update the next fire time
         }
+        else if (Time.time >= nextShoot && doIDoubleShoot) // shootgun
+        {
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity); // Create a bullet
+            StartCoroutine(ShootSecondBulletWithDelay()); //prepare second bullet
+            nextShoot = Time.time + fireRate; // Update the next fire time
+        }
+    }
+
+    private IEnumerator ShootSecondBulletWithDelay() //coroutine second bullet
+    {
+        yield return new WaitForSeconds(fireDelay);
+        Instantiate(bulletPrefab, firePoint.position, Quaternion.identity); // Create the second bullet
     }
 
 
