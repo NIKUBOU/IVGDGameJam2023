@@ -7,6 +7,10 @@ TagManager:
   - WeaponA
   - WeaponB
   - WeaponC
+  - EnemyA
+  - EnemyB
+  - EnemyC
+  - BulletPink
   layers:
   - Default
   - TransparentFX

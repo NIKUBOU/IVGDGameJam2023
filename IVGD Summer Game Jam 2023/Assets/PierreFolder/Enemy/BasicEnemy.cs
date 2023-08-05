@@ -14,17 +14,41 @@ public class BasicEnemy : MonoBehaviour
     private string weaponB = "WeaponB"; // set the tag
     private string weaponC = "WeaponC"; // set the tag
 
+    //Combat
+    [Header("Shooting")]
+    [SerializeField] private bool doIShoot;
+    [SerializeField] private float fireRate;
+    private float nextShoot;
+    public GameObject bulletPrefab; // prefab of the bullet
+    public Transform firePoint; // shooting location
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        nextShoot = fireRate + Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (doIShoot)
+        {
+            Shoot();
+            Debug.Log("Ishouldshoot");
+        }
         
+    }
+
+    void Shoot()
+    {
+        Debug.Log("panpan");
+        if (Time.time >= nextShoot)
+        {            
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity); // Create a bullet
+
+            nextShoot = Time.time + fireRate; // Update the next fire time
+        }
     }
 
 
@@ -55,11 +79,9 @@ public class BasicEnemy : MonoBehaviour
             else
             {
                 return;
-            }
-            
+            }           
 
-        }
-        
+        }       
         
     }
 

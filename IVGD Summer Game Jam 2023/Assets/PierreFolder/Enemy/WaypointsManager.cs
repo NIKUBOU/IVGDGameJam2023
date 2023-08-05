@@ -10,7 +10,7 @@ public class WaypointsManager : MonoBehaviour
     [Range(0f, 2f)]
     [SerializeField] private float waypointSize = 1f;
 
-    [SerializeField] private float delay = 1f;
+    //[SerializeField] private float delay = 1f;
 
     private void OnDrawGizmos()
     {
@@ -42,8 +42,9 @@ public class WaypointsManager : MonoBehaviour
 
         if (currentWaypoint.GetSiblingIndex() < transform.childCount - 1)
         {
-            return transform.GetChild(currentWaypoint.GetSiblingIndex() + 1);
             Debug.Log("TargetingNext");
+            return transform.GetChild(currentWaypoint.GetSiblingIndex() + 1);
+            
         }
 
         else
