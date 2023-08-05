@@ -5,22 +5,29 @@ using UnityEngine;
 public class ShmupManager : MonoBehaviour
 {
 
+    //player health
     public float PlayerCurrentLife = 3;
     public float PlayerMaxLife = 3;
 
-
+    //slected frog ID
     public int FrogSelected = 1;
 
+    //switch frogs
     public GameObject Frog1;
     public GameObject Frog2;
     public GameObject Frog3;
     public GameObject EmptyFrog1;
     public GameObject EmptyFrog2;
     public GameObject EmptyFrog3;
-
     private Vector3 tempPosition1;
     private Vector3 tempPosition2;
     private Vector3 tempPosition3;
+
+    //projectiles
+    public GameObject lazerPrefab1;
+    public GameObject lazerPrefab2;
+    public GameObject lazerPrefab3;
+    public Transform lazerSpawningPoint;
 
 
     // Start is called before the first frame update
@@ -46,6 +53,24 @@ public class ShmupManager : MonoBehaviour
 
         SetFrogPosition();
 
+        //fire laser
+        if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 1 && PlayerCurrentLife >= 1)
+        {
+            GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab1, lazerSpawningPoint);
+            newLazer.transform.parent = null;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 2 && PlayerCurrentLife >= 1)
+        {
+            GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab2, lazerSpawningPoint);
+            newLazer.transform.parent = null;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 3 && PlayerCurrentLife >= 1)
+        {
+            GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab3, lazerSpawningPoint);
+            newLazer.transform.parent = null;
+        }
 
     }
 
