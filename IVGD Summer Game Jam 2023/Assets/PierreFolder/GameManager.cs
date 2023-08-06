@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     //powerUp
+    [Header("PowerUP")]
     public bool isInvincibleActivated;
     public bool isKillThemAllActivated;
     public bool isWeaponActivated;
@@ -17,11 +18,15 @@ public class GameManager : MonoBehaviour
     private float invincibilityTimer = 0f; // for invicible
     public string[] enemyTagsToDestroy = { "EnemyA", "EnemyB", "EnemyC" }; // for kill them all
 
+    public AudioSource audioPowerUp;
+
     //end game
+    [Header("gameover")]
     public bool isGameOver;
 
 
     //Scoreing
+    [Header("Scoreing")]
     public int score;
     public int highscore;
     public int pointPerPowerUp = 500;
@@ -36,19 +41,23 @@ public class GameManager : MonoBehaviour
         //safeguardGameManager
         DontDestroyOnLoad(gameObject);
 
-        //resetgameover
+
+        Reset();
+
+        ScoreSetup();
+    }
+
+    void Reset()
+    {
         isGameOver = false;
         Time.timeScale = 1;
         score = 0;
         UpdateScoreText();
 
-        //Reset PowerUp on start
         isInvincibleActivated = false;
         isKillThemAllActivated = false;
         isWeaponActivated = false;
         isHealActivated = false;
-
-        ScoreSetup();
     }
 
 
@@ -135,21 +144,29 @@ public class GameManager : MonoBehaviour
         isInvincibleActivated = true;
         invincibilityTimer = duration;
         score += pointPerPowerUp;
+
+        audioPowerUp.Play();
     }
     public void ActivateWeapon()
     {
         isWeaponActivated = true;  // to gather to know if I have two weapon
         score += pointPerPowerUp;
+
+        audioPowerUp.Play();
     }
     public void ActivateHeal()
     {
         isHealActivated = true;  // to gather if i'm healed
         score += pointPerPowerUp;
+
+        audioPowerUp.Play();
     }
     public void ActivateKillThemAll()
     {
         isKillThemAllActivated = true;  // don't touch already working NUKE
         score += pointPerPowerUp;
+
+        audioPowerUp.Play();
 
         foreach (string tag in enemyTagsToDestroy)
         {
@@ -172,12 +189,13 @@ public class GameManager : MonoBehaviour
 
 
     #region SceneManagement
-    public void LoadMainLevelScene()
+    public void LoadControllScene()
     {
         SceneManager.LoadScene("ControlsScreen");
         Time.timeScale = 1;
         isGameOver = false;
         Invoke("ScoreSetup", 2.0f);
+        Reset();
     }
 
     public void CloseGame()
@@ -185,6 +203,21 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+        Reset();
+    }
+
+    public void LoadCombatScene()
+    {
+        SceneManager.LoadScene("MainLevel");
+    }
+
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOverScene");
+    }
 
     #endregion
 

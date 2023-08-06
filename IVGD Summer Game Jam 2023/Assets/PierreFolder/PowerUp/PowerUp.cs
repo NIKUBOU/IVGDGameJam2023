@@ -18,6 +18,8 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private PowerUpType myPowerUpType;
     [SerializeField] private float fallingSpeed;
 
+    
+
 
     GameManager gameManager;
 
@@ -28,35 +30,53 @@ public class PowerUp : MonoBehaviour
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         GetComponent<Rigidbody>().velocity = Vector3.down * fallingSpeed;
+
+        
     }
 
     
     private void OnTriggerEnter(Collider other)
     {
-                
-            if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.Invincible)
-            {
-                gameManager.ActivateInvincibility(powerUpDuration);
-                Destroy(gameObject);
-            }
-            else if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.KillThemAll)
-            {
-                gameManager.ActivateKillThemAll();
-                Destroy(gameObject);
-            }
-            else if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.Weapon)
-            {
-                gameManager.ActivateWeapon();
-                Destroy(gameObject); 
-            }
-            else if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.Heal)
-            {
-            gameManager.ActivateHeal();
-                Destroy(gameObject); 
-            }
-                    
         
+        if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.Invincible)
+        {
+           gameManager.ActivateInvincibility(powerUpDuration);
+                
+
+           
+
+
+           Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.KillThemAll)
+        {
+           gameManager.ActivateKillThemAll();
+                
+           
+
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.Weapon)
+        {
+            gameManager.ActivateWeapon();
+                
+            
+
+            Invoke("SelfDestroy", 1.0f);
+        }
+         else if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.Heal)
+         {
+            gameManager.ActivateHeal();
+                
+
+            
+
+            Destroy(gameObject);
+        }
+
     }
+
+    
 
 }
 
