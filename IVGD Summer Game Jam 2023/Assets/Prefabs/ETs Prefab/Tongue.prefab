@@ -133,7 +133,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 72
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &436335838798731765
 MonoBehaviour:
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 20
   ownTongue: {fileID: 3295839017744357585}
-  TongueIson: 0
+  shmupManager: {fileID: 0}
 --- !u!1 &8342632105197962574
 GameObject:
   m_ObjectHideFlags: 0
