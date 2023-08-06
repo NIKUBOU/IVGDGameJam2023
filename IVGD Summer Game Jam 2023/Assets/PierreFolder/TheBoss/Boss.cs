@@ -71,6 +71,11 @@ public class Boss : MonoBehaviour
 
         }
 
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+
     }
 
 
