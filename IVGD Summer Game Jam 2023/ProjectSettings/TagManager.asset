@@ -12,6 +12,8 @@ TagManager:
   - EnemyC
   - BulletPink
   - EnemyVoiture
+  - textScore
+  - highTextScore
   layers:
   - Default
   - TransparentFX
