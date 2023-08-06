@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 668059875888843120}
   - component: {fileID: 41331207521610667}
   - component: {fileID: 7219229317517700554}
+  - component: {fileID: 8967670024952183955}
   m_Layer: 0
   m_Name: BodyCollider
   m_TagString: EnemyA
@@ -392,6 +393,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8967670024952183955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105179430503671316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6f80d80cbda5947b5de3a4ea584cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownEnnemy: {fileID: 4105179430503671316}
 --- !u!1 &9176755382565205289
 GameObject:
   m_ObjectHideFlags: 0
