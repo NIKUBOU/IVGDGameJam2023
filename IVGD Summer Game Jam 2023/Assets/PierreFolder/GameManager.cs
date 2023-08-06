@@ -36,19 +36,23 @@ public class GameManager : MonoBehaviour
         //safeguardGameManager
         DontDestroyOnLoad(gameObject);
 
-        //resetgameover
+
+        Reset();
+
+        ScoreSetup();
+    }
+
+    void Reset()
+    {
         isGameOver = false;
         Time.timeScale = 1;
         score = 0;
         UpdateScoreText();
 
-        //Reset PowerUp on start
         isInvincibleActivated = false;
         isKillThemAllActivated = false;
         isWeaponActivated = false;
         isHealActivated = false;
-
-        ScoreSetup();
     }
 
 
@@ -172,12 +176,13 @@ public class GameManager : MonoBehaviour
 
 
     #region SceneManagement
-    public void LoadMainLevelScene()
+    public void LoadControllScene()
     {
         SceneManager.LoadScene("ControlsScreen");
         Time.timeScale = 1;
         isGameOver = false;
         Invoke("ScoreSetup", 2.0f);
+        Reset();
     }
 
     public void CloseGame()
@@ -185,6 +190,21 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+        Reset();
+    }
+
+    public void LoadCombatScene()
+    {
+        SceneManager.LoadScene("MainLevel");
+    }
+
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOverScene");
+    }
 
     #endregion
 
