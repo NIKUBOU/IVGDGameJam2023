@@ -85,43 +85,7 @@ public class Boss : MonoBehaviour
         
     }
 
-
-    /*
-    private void HealthSystem()
-    {
-        if (isSwitchingEnemyType) return;
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-        else if (currentHealth == 15)
-        {
-            EnemyType randomEnemyType = TypeSwitch();
-            isSwitchingEnemyType = true;
-        }
-        else if (currentHealth == 30)
-        {
-            EnemyType randomEnemyType = TypeSwitch();
-            isSwitchingEnemyType = true;
-        }
-        else if (currentHealth == 45)
-        {
-            EnemyType randomEnemyType = TypeSwitch();
-            isSwitchingEnemyType = true;
-        }
-        else if (currentHealth == 60)
-        {
-            EnemyType randomEnemyType = TypeSwitch();
-            isSwitchingEnemyType = true;
-        }
-        else if (currentHealth == 80)
-        {
-            Debug.Log("DamageDone");
-            EnemyType randomEnemyType = TypeSwitch();
-            isSwitchingEnemyType = true;
-        }
-    }*/
+       
 
     private void Die()
     {
@@ -216,7 +180,10 @@ public class Boss : MonoBehaviour
         }
     }
 
-        
+    public void GetDamage()
+    {
+        currentHealth -= damageAmount;
+    }
 
     private void OnTriggerEnter(Collider other) // detect if I'm hit and if I should die
     {
