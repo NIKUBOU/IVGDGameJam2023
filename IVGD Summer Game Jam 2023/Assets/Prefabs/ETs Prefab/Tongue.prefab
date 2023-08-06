@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8284201522658657659}
   - component: {fileID: 9114426759211227734}
   - component: {fileID: 3101888551698431283}
-  - component: {fileID: 436335838798731765}
+  - component: {fileID: 8668546912331980128}
   m_Layer: 10
   m_Name: Tongue
   m_TagString: WeaponC
@@ -135,7 +135,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &436335838798731765
+--- !u!114 &8668546912331980128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e874ba236836e6d4fa273617cca30a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 20
+  timer: 0
   ownTongue: {fileID: 3295839017744357585}
   shmupManager: {fileID: 0}
 --- !u!1 &8342632105197962574

@@ -15,7 +15,7 @@ public class Grenade : MonoBehaviour
     {
         if (timer > 0)
         {
-            timer -= Random.Range(.01f, .025f);
+            timer -= Random.Range(.024f, .025f);
 
         }
 
