@@ -86,12 +86,14 @@ public class Boss : MonoBehaviour
         
     }
 
-       
+    
+
 
     private void Die()
     {
         Destroy(gameObject);
-        gameManager.LoadGameOver();
+        gameManager.GiveMeBossPoint();
+        gameManager.bossIsDead = true;
     }
 
     EnemyType TypeSwitch()

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     //end game
     [Header("gameover")]
     public bool isGameOver;
+    public bool bossIsDead;
 
 
     //Scoreing
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     public int highscore;
     public int pointPerPowerUp = 500;
     public int pointPerEnemyDestroyed = 100;
+    public int pointPerBossDestroyed = 1000;
     public TMP_Text textScore;
     public TMP_Text highTextScore;
 
@@ -58,20 +60,20 @@ public class GameManager : MonoBehaviour
         isKillThemAllActivated = false;
         isWeaponActivated = false;
         isHealActivated = false;
+        bossIsDead = false;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
         //scoreing
         if (score > highscore)
         {
             highscore = score;
         }
                
-        UpdateScoreText(); // update the score UI
+        
         
 
         // kill Invincible powerUp after x time
@@ -89,6 +91,20 @@ public class GameManager : MonoBehaviour
         {
             Invoke("StopHeal", 2.0f);
         }
+
+        if (bossIsDead)
+        {
+            Invoke("LoadGameOver", 0.5f);
+            bossIsDead=false;
+        }
+            
+
+    }
+
+    void LateUpdate()
+    {
+        ScoreSetup();
+        UpdateScoreText(); // update the score UI
     }
 
 
@@ -127,13 +143,19 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void GiveMeEnemyPoint()
+    {
+        score += pointPerEnemyDestroyed;
+    }
+
+    public void GiveMeBossPoint()
+    {
+        score += pointPerBossDestroyed;
+    }
     #endregion
 
 
-    void StartCombat()
-    {
-        //when tutorial completed activate the wave manager && hide tuto canevas
-    }
 
 
 
@@ -175,7 +197,7 @@ public class GameManager : MonoBehaviour
             foreach (GameObject enemy in enemies)
             {
                 Destroy(enemy);
-                score += pointPerEnemyDestroyed;
+                GiveMeEnemyPoint();
             }
         }
     }
@@ -194,7 +216,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("ControlsScreen");
         Time.timeScale = 1;
         isGameOver = false;
-        Invoke("ScoreSetup", 2.0f);
+        //Invoke("ScoreSetup", 0.5f);
         Reset();
     }
 
@@ -207,16 +229,19 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenuScene");
         Reset();
+        //Invoke("ScoreSetup", 0.5f);
     }
 
     public void LoadCombatScene()
     {
         SceneManager.LoadScene("MainLevel");
+        //Invoke("ScoreSetup", 0.5f);
     }
 
     public void LoadGameOver()
     {
         SceneManager.LoadScene("GameOverScene");
+        //Invoke("ScoreSetup", 0.5f);
     }
 
     #endregion
