@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
-{   
- 
+{
+    public GameObject targetObject;
+    public Collider targetCollider;
 
 
     public enum EnemyType
@@ -39,7 +40,8 @@ public class BasicEnemy : MonoBehaviour
     void Start()
     {
         nextShoot = fireRate + Time.time;
-        
+        targetCollider = targetObject.GetComponent<Collider>();
+
     }
 
     // Update is called once per frame
@@ -76,9 +78,9 @@ public class BasicEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // detect if I'm hit and if I should die
     {
-        BoxCollider boxCollider = GetComponentInChildren<BoxCollider>();
+        //BoxCollider boxCollider = GetComponentInChildren<BoxCollider>();
 
-        if (boxCollider != null)
+        if (targetCollider != null)
         {
             Debug.Log("I'm Hit");
 
