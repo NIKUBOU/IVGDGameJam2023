@@ -777,6 +777,8 @@ MonoBehaviour:
   bodyBObject: {fileID: 2390296526624616487}
   bodyCObject: {fileID: 4418479777729453361}
   bodyDObject: {fileID: 3474226832024566128}
+  switchDelay: 5
+  nextSwitch: 0
   weaponAObject: {fileID: 7653466550771421678}
   weaponBObject: {fileID: 5738655246945782284}
   weaponCObject: {fileID: 4549459806207911416}

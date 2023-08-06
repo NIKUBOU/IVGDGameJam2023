@@ -39,35 +39,38 @@ public class Boss : MonoBehaviour
     public GameObject bodyBObject;
     public GameObject bodyCObject;
     public GameObject bodyDObject;
+    [SerializeField] float switchDelay;
+    [SerializeField] float nextSwitch;
+    
 
     [Header("Weapons")]
     public GameObject weaponAObject;
     public GameObject weaponBObject;
     public GameObject weaponCObject;
     public GameObject weaponDObject;
-    //[SerializeField] private float fireRate;
-    //[SerializeField] private float fireDelay;
-    //private float nextShoot;
-    //public Transform[] firePoints;
-    //public GameObject bulletPrefab;
+    
 
     #endregion
 
     void Start()
     {
         currentHealth = maxHealth;
-        enemyTypes = (EnemyType[])Enum.GetValues(typeof(EnemyType));
-        //nextShoot = fireRate + Time.time;
+        nextSwitch = switchDelay + Time.time;
+        enemyTypes = (EnemyType[])Enum.GetValues(typeof(EnemyType));        
     }
 
     
     void Update()
     {
-        HealthSystem();
-        //nextShoot = fireRate + Time.time;
+        //HealthSystem();
 
-        //if (Time.time >= nextShoot)
-           // Shoot();
+        if (Time.time >= nextSwitch)
+        {
+            SwitchEnemyTypeWithDelay();
+            nextSwitch = Time.time + switchDelay; // Update the next fire time                 
+
+        }
+
     }
 
 
@@ -78,6 +81,7 @@ public class Boss : MonoBehaviour
     }
 
 
+    /*
     private void HealthSystem()
     {
         if (isSwitchingEnemyType) return;
@@ -112,7 +116,7 @@ public class Boss : MonoBehaviour
             EnemyType randomEnemyType = TypeSwitch();
             isSwitchingEnemyType = true;
         }
-    }
+    }*/
 
     private void Die()
     {
@@ -150,10 +154,7 @@ public class Boss : MonoBehaviour
                 bodyBObject.SetActive(false);
                 bodyCObject.SetActive(false);
                 bodyDObject.SetActive(false);
-
-                // Perform actions for TypeA
-                // 1 change colors done
-                // 2 change guns wip
+                                
                 
                 break;
 
@@ -210,27 +211,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-    
-
-    /*
-    void Shoot()
-    {
-        foreach (Transform firePoint in firePoints)
-        {
-                       
-                Instantiate(bulletPrefab, firePoint.position, Quaternion.identity); // Create a bullet
-                //StartCoroutine(ShootSecondBulletWithDelay(firePoint)); //prepare second bullet
-                nextShoot = Time.time + fireRate; // Update the next fire time
-            
-        }
-    }
-
-    private IEnumerator ShootSecondBulletWithDelay(Transform firePoint)
-    {
-        yield return new WaitForSeconds(fireDelay);
-        Instantiate(bulletPrefab, firePoint.position, Quaternion.identity); // Create the second bullet
-    }*/
-
+        
 
     private void OnTriggerEnter(Collider other) // detect if I'm hit and if I should die
     {
