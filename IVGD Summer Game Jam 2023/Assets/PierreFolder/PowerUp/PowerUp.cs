@@ -18,7 +18,7 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private PowerUpType myPowerUpType;
     [SerializeField] private float fallingSpeed;
 
-    private AudioSource audioSource;
+    
 
 
     GameManager gameManager;
@@ -31,30 +31,19 @@ public class PowerUp : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
         GetComponent<Rigidbody>().velocity = Vector3.down * fallingSpeed;
 
-        audioSource = GetComponent<AudioSource>();
+        
     }
 
     
     private void OnTriggerEnter(Collider other)
     {
-        if (audioSource == null)
-        {
-            Debug.LogWarning("AudioSource reference is null.");
-            return;
-        }
-
-
+        
         if (other.gameObject.CompareTag("Player") && myPowerUpType == PowerUpType.Invincible)
         {
            gameManager.ActivateInvincibility(powerUpDuration);
                 
 
-           //AudioSource audioSource = GetComponent<AudioSource>();
-           if (audioSource != null)
-           {
-                audioSource.Play(); // Play the audio clip from the AudioSource component
-                    
-           }
+           
 
 
            Destroy(gameObject);
@@ -63,12 +52,7 @@ public class PowerUp : MonoBehaviour
         {
            gameManager.ActivateKillThemAll();
                 
-           //AudioSource audioSource = GetComponent<AudioSource>();
-           if (audioSource != null)
-           {
-                audioSource.Play(); // Play the audio clip from the AudioSource component
-                
-           }
+           
 
             Destroy(gameObject);
         }
@@ -76,11 +60,7 @@ public class PowerUp : MonoBehaviour
         {
             gameManager.ActivateWeapon();
                 
-            //AudioSource audioSource = GetComponent<AudioSource>();
-            if (audioSource != null)
-            {
-                audioSource.Play(); // Play the audio clip from the AudioSource component
-            }
+            
 
             Invoke("SelfDestroy", 1.0f);
         }
@@ -89,11 +69,7 @@ public class PowerUp : MonoBehaviour
             gameManager.ActivateHeal();
                 
 
-            //AudioSource audioSource = GetComponent<AudioSource>();
-            if (audioSource != null)
-            {
-                audioSource.Play(); // Play the audio clip from the AudioSource component
-            }
+            
 
             Destroy(gameObject);
         }
