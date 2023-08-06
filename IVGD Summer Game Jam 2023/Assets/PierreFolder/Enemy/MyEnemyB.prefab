@@ -251,6 +251,8 @@ GameObject:
   - component: {fileID: 7769138097341466517}
   - component: {fileID: 668059875888843120}
   - component: {fileID: 41331207521610667}
+  - component: {fileID: 6855531460243820121}
+  - component: {fileID: 2831646916174141362}
   - component: {fileID: 7219229317517700554}
   m_Layer: 0
   m_Name: BodyCollider
@@ -365,6 +367,32 @@ MonoBehaviour:
   moveSpeed: 5
   distanceThreshold: 0.1
   autoDestruction: 1
+--- !u!114 &6855531460243820121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105179430503671316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010167c125451684ca588b586477d19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownSelf: {fileID: 4105179430503671316}
+--- !u!114 &2831646916174141362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105179430503671316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7384a3689dfbc0b4d9aa65d471b96b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownEnnemy: {fileID: 9176755382565205289}
 --- !u!54 &7219229317517700554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -439,6 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4590213d6d2a90d4b891751ff380db82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetObject: {fileID: 0}
+  targetCollider: {fileID: 0}
   enemyType: 1
   doIShoot: 1
   doIDoubleShoot: 0
