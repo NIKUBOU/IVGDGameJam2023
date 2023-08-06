@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +24,10 @@ public class GameManager : MonoBehaviour
     //Scoreing
     public int score;
     public int highscore;
+    public int pointPerPowerUp = 500;
+    public int pointPerEnemyDestroyed = 100;
+    public TMP_Text textScore;
+    public TMP_Text highTextScore;
 
 
     // Start is called before the first frame update
@@ -33,24 +39,31 @@ public class GameManager : MonoBehaviour
         //resetgameover
         isGameOver = false;
         Time.timeScale = 1;
+        score = 0;
+        UpdateScoreText();
 
         //Reset PowerUp on start
         isInvincibleActivated = false;
         isKillThemAllActivated = false;
         isWeaponActivated = false;
         isHealActivated = false;
+
+        ScoreSetup();
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        
         //scoreing
         if (score > highscore)
         {
             highscore = score;
         }
-
+               
+        UpdateScoreText(); // update the score UI
+        
 
         // kill Invincible powerUp after x time
         if (isInvincibleActivated)
@@ -62,26 +75,51 @@ public class GameManager : MonoBehaviour
                 invincibilityTimer -= Time.deltaTime;
         }
 
+
         if (isHealActivated)  //should autokill the heal
         {
             Invoke("StopHeal", 2.0f);
         }
     }
 
-    void StopHeal()
+
+
+    #region Score
+    private void UpdateScoreText() //update the score
     {
-        isHealActivated = false;
+        if (textScore != null)
+            textScore.text = score.ToString();
+        
+        if(highTextScore != null)
+            highTextScore.text = highscore.ToString();
     }
 
-
-    void StartGame()
+    private void ScoreSetup()
     {
-        //Start Game
-        Time.timeScale = 1;
-        isGameOver = false;
+        if (textScore == null)
+        {
+            //Debug.Log("lookingfortxt");
+            GameObject textScoreObject = GameObject.FindGameObjectWithTag("textScore");
 
-        //main menu start button load the game scene on the toto canevas
+            if (textScoreObject != null)
+            {
+                textScore = textScoreObject.GetComponent<TMP_Text>();
+            }
+        }
+
+        if (highTextScore == null)
+        {
+            //Debug.Log("lookingfortxt");
+            GameObject highTextScoreObject = GameObject.FindGameObjectWithTag("highTextScore");
+
+            if (highTextScoreObject != null)
+            {
+                highTextScore = highTextScoreObject.GetComponent<TMP_Text>();
+            }
+        }
     }
+    #endregion
+
 
     void StartCombat()
     {
@@ -89,23 +127,29 @@ public class GameManager : MonoBehaviour
     }
 
 
+
+
     #region PowerUp
     public void ActivateInvincibility(float duration)
     {
         isInvincibleActivated = true;
         invincibilityTimer = duration;
+        score += pointPerPowerUp;
     }
     public void ActivateWeapon()
     {
         isWeaponActivated = true;  // to gather to know if I have two weapon
+        score += pointPerPowerUp;
     }
     public void ActivateHeal()
     {
         isHealActivated = true;  // to gather if i'm healed
+        score += pointPerPowerUp;
     }
     public void ActivateKillThemAll()
     {
         isKillThemAllActivated = true;  // don't touch already working NUKE
+        score += pointPerPowerUp;
 
         foreach (string tag in enemyTagsToDestroy)
         {
@@ -114,10 +158,39 @@ public class GameManager : MonoBehaviour
             foreach (GameObject enemy in enemies)
             {
                 Destroy(enemy);
+                score += pointPerEnemyDestroyed;
             }
         }
     }
+
+    void StopHeal()
+    {
+        isHealActivated = false;
+    }
+
     #endregion
+
+
+    #region SceneManagement
+    public void LoadMainLevelScene()
+    {
+        SceneManager.LoadScene("MainLevel");
+        Time.timeScale = 1;
+        isGameOver = false;
+        Invoke("ScoreSetup", 2.0f);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
+
+    #endregion
+
+
+    
+
 
 }
 
