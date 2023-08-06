@@ -29,9 +29,15 @@ public class ShmupManager : MonoBehaviour
     public GameObject lazerPrefab3;
     public Transform lazerSpawningPoint;
 
-    //to delete
-    //public GameObject ownTongue;
     public TongueExpire tongueExpire;
+
+    //audio
+    public AudioSource audioSourceFire1;
+    public AudioSource audioSourceFire2;
+    public AudioSource audioSourceFire3;
+    public AudioSource audioSourceSwitch1;
+    public AudioSource audioSourceSwitch2;
+    public AudioSource audioSourceSwitch3;
 
 
     // Start is called before the first frame update
@@ -62,6 +68,7 @@ public class ShmupManager : MonoBehaviour
         {
 
             tongueExpire.timer = 5f;
+            audioSourceFire1.Play();
 
         }
 
@@ -69,12 +76,14 @@ public class ShmupManager : MonoBehaviour
         {
             GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab2, lazerSpawningPoint);
             newLazer.transform.parent = null;
+            audioSourceFire2.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 3 && PlayerCurrentLife >= 1)
         {
             GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab3, lazerSpawningPoint);
             newLazer.transform.parent = null;
+            audioSourceFire3.Play();
         }
 
     }
@@ -93,6 +102,7 @@ public class ShmupManager : MonoBehaviour
             Frog1.transform.position = tempPosition1;
             Frog2.transform.position = tempPosition2;
             Frog3.transform.position = tempPosition3;
+            audioSourceSwitch1.Play();
         }
 
         if (FrogSelected == 2 && PlayerCurrentLife >= 1)
@@ -100,6 +110,7 @@ public class ShmupManager : MonoBehaviour
             Frog1.transform.position = tempPosition2;
             Frog2.transform.position = tempPosition3;
             Frog3.transform.position = tempPosition1;
+            audioSourceSwitch2.Play();
         }
 
         if (FrogSelected == 3 && PlayerCurrentLife >= 1)
@@ -107,6 +118,7 @@ public class ShmupManager : MonoBehaviour
             Frog1.transform.position = tempPosition3;
             Frog2.transform.position = tempPosition1;
             Frog3.transform.position = tempPosition2;
+            audioSourceSwitch3.Play();
         }
 
 
