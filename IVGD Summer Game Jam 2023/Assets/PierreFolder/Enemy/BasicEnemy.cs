@@ -5,6 +5,8 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {   
  
+
+
     public enum EnemyType
     {
         TypeA,
@@ -19,6 +21,8 @@ public class BasicEnemy : MonoBehaviour
     private string weaponA = "WeaponA"; //set the tag
     private string weaponB = "WeaponB"; // set the tag
     private string weaponC = "WeaponC"; // set the tag
+
+    
 
     //Combat
     [Header("Shooting")]
@@ -35,6 +39,7 @@ public class BasicEnemy : MonoBehaviour
     void Start()
     {
         nextShoot = fireRate + Time.time;
+        
     }
 
     // Update is called once per frame
@@ -71,7 +76,9 @@ public class BasicEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // detect if I'm hit and if I should die
     {
-        if (other.transform.IsChildOf(transform))
+        BoxCollider boxCollider = GetComponentInChildren<BoxCollider>();
+
+        if (boxCollider != null)
         {
             Debug.Log("I'm Hit");
 
