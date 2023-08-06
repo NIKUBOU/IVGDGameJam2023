@@ -44,13 +44,13 @@ public class ShmupManager : MonoBehaviour
     void Update()
     {
         //Press space to switch Players
-        if (Input.GetKeyDown(KeyCode.Space) && FrogSelected <= 2 && PlayerCurrentLife >= 1)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && FrogSelected <= 2 && PlayerCurrentLife >= 1)
         {
             FrogSelected = FrogSelected + 1;
 
         }
 
-        else if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 3 && PlayerCurrentLife >= 1)
+        else if (Input.GetKeyDown(KeyCode.LeftShift) && FrogSelected == 3 && PlayerCurrentLife >= 1)
         {
             FrogSelected = 1;
         }
@@ -58,20 +58,20 @@ public class ShmupManager : MonoBehaviour
         SetFrogPosition();
 
         //fire laser
-        if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 1 && PlayerCurrentLife >= 1)
+        if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 1 && PlayerCurrentLife >= 1)
         {
 
-            tongueExpire.timer = 10f;
+            tongueExpire.timer = 5f;
 
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 2 && PlayerCurrentLife >= 1)
+        if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 2 && PlayerCurrentLife >= 1)
         {
             GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab2, lazerSpawningPoint);
             newLazer.transform.parent = null;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 3 && PlayerCurrentLife >= 1)
+        if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 3 && PlayerCurrentLife >= 1)
         {
             GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab3, lazerSpawningPoint);
             newLazer.transform.parent = null;

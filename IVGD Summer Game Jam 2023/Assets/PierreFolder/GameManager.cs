@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour
     #region SceneManagement
     public void LoadMainLevelScene()
     {
-        SceneManager.LoadScene("MainLevel");
+        SceneManager.LoadScene("ControlsScreen");
         Time.timeScale = 1;
         isGameOver = false;
         Invoke("ScoreSetup", 2.0f);
