@@ -48,15 +48,16 @@ public class Boss : MonoBehaviour
     public GameObject weaponBObject;
     public GameObject weaponCObject;
     public GameObject weaponDObject;
-    
 
+    GameManager gameManager;
     #endregion
 
     void Start()
     {
         currentHealth = maxHealth;
         nextSwitch = switchDelay + Time.time;
-        enemyTypes = (EnemyType[])Enum.GetValues(typeof(EnemyType));        
+        enemyTypes = (EnemyType[])Enum.GetValues(typeof(EnemyType));
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     
@@ -90,6 +91,7 @@ public class Boss : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        gameManager.LoadGameOver();
     }
 
     EnemyType TypeSwitch()
