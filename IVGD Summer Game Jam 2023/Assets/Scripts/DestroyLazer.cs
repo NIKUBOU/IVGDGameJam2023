@@ -9,7 +9,7 @@ public class DestroyLazer: MonoBehaviour
         if (targetObj.gameObject.tag == "WeaponA")
             Destroy(targetObj.gameObject);
 
-        if (targetObj.gameObject.tag == "WeaponB")
+        if (targetObj.gameObject.tag == "WeaponX")
             Destroy(targetObj.gameObject);
 
         if (targetObj.gameObject.tag == "WeaponC")

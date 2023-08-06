@@ -14,6 +14,7 @@ TagManager:
   - EnemyVoiture
   - textScore
   - highTextScore
+  - WeaponX
   layers:
   - Default
   - TransparentFX

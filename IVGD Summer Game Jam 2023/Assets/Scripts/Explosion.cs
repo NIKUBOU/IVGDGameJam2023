@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    //public int destroyTime = 5;
 
-    //new
+
     public float timer = 20f;
 
-    /*public void ExplosionStart()
-    {
-        Destroy(gameObject, destroyTime);
-    }*/
+
 
     private void Update()
     {

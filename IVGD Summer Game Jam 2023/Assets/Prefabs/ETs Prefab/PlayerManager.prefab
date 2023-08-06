@@ -70,3 +70,4 @@ MonoBehaviour:
   lazerPrefab2: {fileID: 1406202559777940023, guid: fe8e92071245bf04ab1b20f19c61ad59, type: 3}
   lazerPrefab3: {fileID: 1406202559777940023, guid: cb3871cbed282f64f9238343a33a564b, type: 3}
   lazerSpawningPoint: {fileID: 0}
+  ownTongue: {fileID: 3295839017744357585, guid: 8936fe972fd1cc445b31eefa6bc18e87, type: 3}

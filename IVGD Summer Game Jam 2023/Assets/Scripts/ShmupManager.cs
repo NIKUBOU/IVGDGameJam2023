@@ -29,6 +29,10 @@ public class ShmupManager : MonoBehaviour
     public GameObject lazerPrefab3;
     public Transform lazerSpawningPoint;
 
+    //to delete
+    //public GameObject ownTongue;
+    public TongueExpire tongueExpire;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +60,9 @@ public class ShmupManager : MonoBehaviour
         //fire laser
         if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 1 && PlayerCurrentLife >= 1)
         {
-            GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab1, lazerSpawningPoint);
-            newLazer.transform.parent = null;
+
+            tongueExpire.timer = 10f;
+
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && FrogSelected == 2 && PlayerCurrentLife >= 1)
