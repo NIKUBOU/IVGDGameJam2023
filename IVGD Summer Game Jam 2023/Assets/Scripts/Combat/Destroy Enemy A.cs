@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DieFromWA : MonoBehaviour
+public class DestroyEnemyA : MonoBehaviour
 {
     public GameObject ownEnnemy;
     

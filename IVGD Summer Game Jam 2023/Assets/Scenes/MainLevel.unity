@@ -1839,6 +1839,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4392650628424697029, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 313658839}
+    - targetCorrespondingSourceObject: {fileID: 2124814410213661576, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1726167374}
   m_SourcePrefab: {fileID: 100100000, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
 --- !u!1001 &1202812083
 PrefabInstance:
@@ -2087,6 +2090,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2124814410213661576, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
   m_PrefabInstance: {fileID: 1128907063}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1726167374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726167368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e874ba236836e6d4fa273617cca30a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 10
+  ownTongue: {fileID: 1726167368}
+  shmupManager: {fileID: 1488441016}
 --- !u!1 &1731816096
 GameObject:
   m_ObjectHideFlags: 0

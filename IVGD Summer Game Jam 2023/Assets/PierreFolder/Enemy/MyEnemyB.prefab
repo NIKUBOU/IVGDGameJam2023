@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 7769138097341466517}
   - component: {fileID: 668059875888843120}
   - component: {fileID: 41331207521610667}
-  - component: {fileID: 6855531460243820121}
+  - component: {fileID: 6090802394305261332}
   - component: {fileID: 2831646916174141362}
   - component: {fileID: 7219229317517700554}
   m_Layer: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   moveSpeed: 5
   distanceThreshold: 0.1
   autoDestruction: 1
---- !u!114 &6855531460243820121
+--- !u!114 &6090802394305261332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

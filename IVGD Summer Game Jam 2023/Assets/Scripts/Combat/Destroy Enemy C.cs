@@ -8,8 +8,8 @@ public class DestroyEnemyC : MonoBehaviour
 
     void OnTriggerEnter(Collider targetObj)
     {
-        if (targetObj.gameObject.tag == "WeaponC")
-            Destroy(targetObj.gameObject);
+        /*if (targetObj.gameObject.tag == "WeaponC")
+            Destroy(targetObj.gameObject);*/
 
 
     }
