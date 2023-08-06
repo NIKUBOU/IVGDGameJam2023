@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 3145195127345905304}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 90}
 --- !u!33 &4493413641250429436
 MeshFilter:
   m_ObjectHideFlags: 0
