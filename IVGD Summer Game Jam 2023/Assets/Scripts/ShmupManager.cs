@@ -124,8 +124,17 @@ public class ShmupManager : MonoBehaviour
 
     }
 
+    void OnTriggerEnter(Collider targetObj)
+    {
+        if (targetObj.gameObject.tag == "BulletPink")
+            PlayerCurrentLife -= 1;
 
+    }
 
+    /*public void PlayerGetDamage()
+    {
+        PlayerCurrentLife -= 1;
+    }*/
 
 
 }

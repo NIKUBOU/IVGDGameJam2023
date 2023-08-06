@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4939867039468245928}
   - component: {fileID: 2446808502423434778}
   - component: {fileID: 4961572989309271994}
+  - component: {fileID: 6259574641770855064}
+  - component: {fileID: 4586619061709423895}
   m_Layer: 0
   m_Name: BulletPink
   m_TagString: BulletPink
@@ -147,3 +149,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &6259574641770855064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289727317611559522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e0f86f0eca496419d0d1820cf2a8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownSelf: {fileID: 8289727317611559522}
+--- !u!114 &4586619061709423895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289727317611559522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9d94381b8e73c4c84744487f2553d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownEnnemy: {fileID: 8289727317611559522}
+  shmupManager: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
