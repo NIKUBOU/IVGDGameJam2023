@@ -8,17 +8,9 @@ public class GoToSceneMainLevel : MonoBehaviour
 {
 
 
-    public void Replay()
+    public void GoTo()
     {
         SceneManager.LoadScene("MainLevel");
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("MainLevel");
-
-        }
-    }
 }
