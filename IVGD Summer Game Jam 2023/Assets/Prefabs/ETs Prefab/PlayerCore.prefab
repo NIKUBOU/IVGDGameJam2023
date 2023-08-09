@@ -617,6 +617,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 406b7f2e5833ce943abc7c9e6e502eb5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2560102011536183329}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 406b7f2e5833ce943abc7c9e6e502eb5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8442160692913663471}
   m_SourcePrefab: {fileID: 100100000, guid: 406b7f2e5833ce943abc7c9e6e502eb5, type: 3}
 --- !u!4 &2545432189091542166 stripped
 Transform:
@@ -649,6 +652,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.042190373
   m_Center: {x: 0.000000013038516, y: -0.0056677265, z: 0.004337063}
+--- !u!114 &8442160692913663471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889307351751667244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9d94381b8e73c4c84744487f2553d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownEnnemy: {fileID: 0}
+  shmupManager: {fileID: 0}
 --- !u!1001 &3513361232519021401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,6 +807,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d34749d7ebf62f40aa8aeb544927cbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8511103985397235518}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d34749d7ebf62f40aa8aeb544927cbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6487915607934177956}
   m_SourcePrefab: {fileID: 100100000, guid: 6d34749d7ebf62f40aa8aeb544927cbb, type: 3}
 --- !u!4 &4854280418007179176 stripped
 Transform:
@@ -822,6 +842,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.042190373
   m_Center: {x: 0.000000013038516, y: -0.0056677265, z: 0.004337063}
+--- !u!114 &6487915607934177956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194355707151090962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9d94381b8e73c4c84744487f2553d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownEnnemy: {fileID: 0}
+  shmupManager: {fileID: 0}
 --- !u!1001 &8577654482966237516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -897,6 +931,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8864629fd1124b642ab2887466c1b6e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8115081856674129872}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8864629fd1124b642ab2887466c1b6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6376522637255175149}
   m_SourcePrefab: {fileID: 100100000, guid: 8864629fd1124b642ab2887466c1b6e5, type: 3}
 --- !u!4 &8107405337931298471 stripped
 Transform:
@@ -929,3 +966,17 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.042190373
   m_Center: {x: -0.0000018943101, y: -0.0056677265, z: 0.004337063}
+--- !u!114 &6376522637255175149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919549072569822237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9d94381b8e73c4c84744487f2553d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownEnnemy: {fileID: 0}
+  shmupManager: {fileID: 0}

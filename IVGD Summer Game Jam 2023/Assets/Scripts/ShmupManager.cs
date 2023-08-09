@@ -9,6 +9,8 @@ public class ShmupManager : MonoBehaviour
     public float PlayerCurrentLife = 3;
     public float PlayerMaxLife = 3;
 
+    public GameManager gameManager;
+
     //slected frog ID
     public int FrogSelected = 1;
 
@@ -86,6 +88,8 @@ public class ShmupManager : MonoBehaviour
             audioSourceFire3.Play();
         }
 
+
+
     }
 
 
@@ -131,10 +135,7 @@ public class ShmupManager : MonoBehaviour
 
     }
 
-    /*public void PlayerGetDamage()
-    {
-        PlayerCurrentLife -= 1;
-    }*/
+
 
 
 }

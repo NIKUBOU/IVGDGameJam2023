@@ -1794,6 +1794,18 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6376522637255175149, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
+      propertyPath: shmupManager
+      value: 
+      objectReference: {fileID: 1488441016}
+    - target: {fileID: 6487915607934177956, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
+      propertyPath: shmupManager
+      value: 
+      objectReference: {fileID: 1488441016}
+    - target: {fileID: 8442160692913663471, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
+      propertyPath: shmupManager
+      value: 
+      objectReference: {fileID: 1488441016}
     - target: {fileID: 8838481700546474011, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -2051,9 +2063,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1044374236}
     - target: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1310041937}
+    - target: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
       propertyPath: tongueExpire
       value: 
       objectReference: {fileID: 313658839}
+    - target: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
+      propertyPath: PlayerMaxLife
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
       propertyPath: audioSourceFire1
       value: 
@@ -2068,7 +2088,7 @@ PrefabInstance:
       objectReference: {fileID: 1869530890}
     - target: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
       propertyPath: PlayerCurrentLife
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
       propertyPath: audioSourceSwitch1
@@ -2091,6 +2111,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
+--- !u!114 &1310041937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8373285017195088796, guid: c48ade5632a602d4aa78d3209e333feb, type: 3}
+  m_PrefabInstance: {fileID: 1753271573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab75a85e431d0de46b0f77c15644eab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1372122329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8373285017195088796, guid: c48ade5632a602d4aa78d3209e333feb, type: 3}
+      propertyPath: shmupManager
+      value: 
+      objectReference: {fileID: 1488441016}
     - target: {fileID: 9095276555662945896, guid: c48ade5632a602d4aa78d3209e333feb, type: 3}
       propertyPath: m_Name
       value: GameManager

@@ -7,11 +7,12 @@ public class DestroyEnemyD : MonoBehaviour
     public GameObject ownEnnemy;
     public ShmupManager shmupManager;
 
-   /* void OnTriggerEnter(Collider targetObj)
+ 
+    void OnTriggerEnter(Collider targetObj)
     {
-        if (targetObj.gameObject.tag == "Player")
-            //Destroy(targetObj.gameObject);
-            shmupManager.PlayerGetDamage();
+        if (targetObj.gameObject.tag == "BulletPink")
+            shmupManager.PlayerCurrentLife = shmupManager.PlayerCurrentLife - 1;
 
-    }*/
+
+    }
 }

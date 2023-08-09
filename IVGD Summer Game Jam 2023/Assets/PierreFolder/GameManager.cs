@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public AudioSource audioPowerUp;
 
+    public ShmupManager shmupManager; //added crapcode
+
     //end game
     [Header("gameover")]
     public bool isGameOver;
@@ -98,6 +100,12 @@ public class GameManager : MonoBehaviour
             bossIsDead=false;
         }
             
+
+        //added crapcode
+        if (shmupManager.PlayerCurrentLife <= 0)
+        {
+            LoadGameOver();
+        }
 
     }
 
@@ -180,6 +188,7 @@ public class GameManager : MonoBehaviour
     {
         isHealActivated = true;  // to gather if i'm healed
         score += pointPerPowerUp;
+        //shmupManager.PlayerCurrentLife = shmupManager.PlayerMaxLife; //added crapcode
 
         audioPowerUp.Play();
     }
