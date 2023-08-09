@@ -1784,8 +1784,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5227880990717222457, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
       propertyPath: timer
-      value: 10
+      value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5227880990717222457, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
+      propertyPath: shmupManager
+      value: 
+      objectReference: {fileID: 1488441016}
     - target: {fileID: 6330740517288157245, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
       propertyPath: moveSpeed
       value: 25
@@ -1850,9 +1854,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4392650628424697029, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 313658839}
-    - targetCorrespondingSourceObject: {fileID: 2124814410213661576, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1726167374}
   m_SourcePrefab: {fileID: 100100000, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
 --- !u!1 &1199853876
 GameObject:
@@ -2255,21 +2256,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2124814410213661576, guid: 2e18b23088121a04bb7ce591bd3c548b, type: 3}
   m_PrefabInstance: {fileID: 1128907063}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1726167374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726167368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e874ba236836e6d4fa273617cca30a90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 10
-  ownTongue: {fileID: 1726167368}
-  shmupManager: {fileID: 1488441016}
 --- !u!1 &1731816096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 162, y: 155}
+  m_AnchoredPosition: {x: 162, y: 154.99997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1872292792

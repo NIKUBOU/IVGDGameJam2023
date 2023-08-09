@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TongueExpire : MonoBehaviour
 {
-    public float timer = 0f;
+    public float timer;
 
     public GameObject ownTongue;
     public ShmupManager shmupManager;
@@ -19,9 +19,9 @@ public class TongueExpire : MonoBehaviour
 
         }
 
-        if (timer < 0)
+        else if (timer <= 0)
         {
-
+            timer = 0f;
             ownTongue.SetActive(false);
 
         }

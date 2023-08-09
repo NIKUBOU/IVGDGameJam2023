@@ -142,14 +142,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3295839017744357585}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e874ba236836e6d4fa273617cca30a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 0.02
   ownTongue: {fileID: 3295839017744357585}
-  shmupManager: {fileID: 0}
+  shmupManager: {fileID: 908900705555101290, guid: f85c3bcc1837a0243943edb0d1f9ef97, type: 3}
 --- !u!1 &8342632105197962574
 GameObject:
   m_ObjectHideFlags: 0

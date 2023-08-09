@@ -67,7 +67,7 @@ public class ShmupManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 1 && PlayerCurrentLife >= 1)
         {
 
-            tongueExpire.timer = 5f;
+            tongueExpire.timer = 0.2f;
             audioSourceFire1.Play();
 
         }
