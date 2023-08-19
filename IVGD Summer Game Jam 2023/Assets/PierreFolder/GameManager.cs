@@ -164,10 +164,6 @@ public class GameManager : MonoBehaviour
     #endregion
 
 
-
-
-
-
     #region PowerUp
     public void ActivateInvincibility(float duration)
     {
@@ -188,7 +184,7 @@ public class GameManager : MonoBehaviour
     {
         isHealActivated = true;  // to gather if i'm healed
         score += pointPerPowerUp;
-        //shmupManager.PlayerCurrentLife = shmupManager.PlayerMaxLife; //added crapcode
+        shmupManager.PlayerCurrentLife = shmupManager.PlayerMaxLife; //added crapcode
 
         audioPowerUp.Play();
     }

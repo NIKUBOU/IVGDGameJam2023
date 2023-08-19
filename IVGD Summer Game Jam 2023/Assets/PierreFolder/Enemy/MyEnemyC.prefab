@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4590213d6d2a90d4b891751ff380db82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 4105179430503671316}
   targetCollider: {fileID: 0}
   enemyType: 2
   doIShoot: 0

@@ -58,4 +58,12 @@ public class StayWithinBoundingBox : MonoBehaviour
         
         transform.position = position;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 center = (minimum + maximum) / 2;
+        Vector3 size = maximum - minimum;
+        Gizmos.DrawWireCube(center, size);
+    }
 }

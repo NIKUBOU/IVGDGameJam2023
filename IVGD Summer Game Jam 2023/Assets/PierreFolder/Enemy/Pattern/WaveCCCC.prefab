@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2161594130888916868}
+  - component: {fileID: 8627435973195443863}
   m_Layer: 0
   m_Name: WaveCCCC
   m_TagString: Untagged
@@ -66,6 +67,18 @@ Transform:
   - {fileID: 3290501857436756048}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8627435973195443863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572353837944041252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eae229c80a5c1e4db322b6ff824f972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2505971600875129767
 GameObject:
   m_ObjectHideFlags: 0

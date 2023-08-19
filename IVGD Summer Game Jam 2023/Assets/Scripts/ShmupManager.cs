@@ -45,7 +45,7 @@ public class ShmupManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        PlayerCurrentLife = PlayerMaxLife;
     }
 
     // Update is called once per frame
@@ -66,14 +66,14 @@ public class ShmupManager : MonoBehaviour
         SetFrogPosition();
 
         //fire laser
+        // Red Frog
         if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 1 && PlayerCurrentLife >= 1)
         {
-
             tongueExpire.timer = 0.2f;
             audioSourceFire1.Play();
-
         }
 
+        //Blue Frog
         if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 2 && PlayerCurrentLife >= 1)
         {
             GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab2, lazerSpawningPoint);
@@ -81,6 +81,7 @@ public class ShmupManager : MonoBehaviour
             audioSourceFire2.Play();
         }
 
+        // green frog
         if (Input.GetKeyDown(KeyCode.Space) && FrogSelected == 3 && PlayerCurrentLife >= 1)
         {
             GameObject newLazer = GameObject.Instantiate<GameObject>(lazerPrefab3, lazerSpawningPoint);
@@ -89,6 +90,12 @@ public class ShmupManager : MonoBehaviour
         }
 
 
+
+        //gameover
+        if (PlayerCurrentLife < 0)
+        {
+            gameManager.LoadGameOver();
+        }
 
     }
 
@@ -124,8 +131,6 @@ public class ShmupManager : MonoBehaviour
             Frog3.transform.position = tempPosition2;
             audioSourceSwitch3.Play();
         }
-
-
     }
 
     void OnTriggerEnter(Collider targetObj)
@@ -134,6 +139,7 @@ public class ShmupManager : MonoBehaviour
             PlayerCurrentLife -= 1;
 
     }
+
 
 
 

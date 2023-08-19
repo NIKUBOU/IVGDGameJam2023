@@ -16,4 +16,16 @@ public class DestroyLazer: MonoBehaviour
             Destroy(targetObj.gameObject);
     }
 
+    void OnTriggerEnter(Collider targetObj)
+    {
+        if (targetObj.gameObject.tag == "WeaponA")
+            Destroy(targetObj.gameObject);
+
+        if (targetObj.gameObject.tag == "WeaponX")
+            Destroy(targetObj.gameObject);
+
+        if (targetObj.gameObject.tag == "WeaponC")
+            Destroy(targetObj.gameObject);
+    }
+
 }

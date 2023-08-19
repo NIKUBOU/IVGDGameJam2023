@@ -49,9 +49,12 @@ public class BasicEnemy : MonoBehaviour
     {
         if (doIShoot || doIDoubleShoot)
         {
+            if(firePoint != null)
             Shoot();            
         }
-        
+
+       
+
     }
 
     void Shoot()
@@ -76,6 +79,7 @@ public class BasicEnemy : MonoBehaviour
     }
 
 
+   
     private void OnTriggerEnter(Collider other) // detect if I'm hit and if I should die
     {
         //BoxCollider boxCollider = GetComponentInChildren<BoxCollider>();
